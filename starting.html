@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeCart - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            opacity: 1;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .fade-container {
+            opacity: 1;
+            transition: opacity 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="fade-container" id="fadeContent">
+        <h1>Welcome to LuxeCart</h1>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.body.style.opacity = '0'; // Fade out effect
+            setTimeout(() => {
+                window.location.href = 'index.html'; // Redirect after fade-out
+            }, 1500); 
+        }, 2000); // Show the welcome screen for 2 seconds
+    </script>
+</body>
+</html>
