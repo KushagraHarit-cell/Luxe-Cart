@@ -11,12 +11,11 @@ body {
 }
 
 header {
-    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    background: linear-gradient(90deg, rgba(107, 54, 0, 0.692), rgba(0, 0, 0, 0.719));
     color: white;
     padding: 1em;
     font-size: 1.5rem;
     font-weight: bold;
-    box-shadow: 0px 4px 8px rgb(255, 255, 255);
 }
 
 nav ul {
@@ -44,8 +43,8 @@ nav ul li a:hover {
 .product-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 50px;
+    padding: 10px;
     flex-wrap: wrap;
 }
 
@@ -53,13 +52,14 @@ nav ul li a:hover {
     background: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 75, 43, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto;
+    width: auto;
 }
 
 .product-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(202, 86, 66, 0.4);
+    box-shadow: 0px 12px 17px rgb(255, 255, 255);
 }
 
 /* Login */
@@ -72,6 +72,7 @@ nav ul li a:hover {
     background: rgb(0, 0, 0);
     padding: 25px;
     border-radius: 9%;
+    
 }
 
 #loginForm input {
@@ -94,6 +95,8 @@ nav ul li a:hover {
     border: none;
     width: 100%;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 #loginForm button:hover {
     background: rgb(12, 20, 136);
@@ -105,3 +108,44 @@ nav ul li a:hover {
 #loginForm input:hover{
     background: #000000;
 }
+video{
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
+#login_btn a{
+    text-decoration: none;
+    color: inherit;
+}
+.Buy a{
+    text-decoration: none;
+    font-size: 25px;
+    font-size: 35px !important;
+    color: rgb(255, 255, 255) ;
+}
+.product-card button{
+    background-color: black;
+    border:rgb(255, 255, 255) solid 2px ;
+    border-radius: 15px ;
+    padding: 5px 10px;
+}
+.product-card button:hover{
+    background-color: rgb(255, 255, 255) ;
+}
+.Buy :hover{
+    color: rgb(0, 0, 0) ;
+}
+.product-card .Buy:hover{
+    color: azure;
+
+}
+#text{
+    font-size: 20px;
+
+}
+
+
+

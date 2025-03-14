@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="payment.css">
+    <script defer src="payment.js"></script>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Choose Your Payment Method</h2>
+
+        <div class="payment-options">
+            <button class="payment-btn" onclick="showPayment('upi')">Pay via UPI</button>
+            <button class="payment-btn" onclick="showPayment('card')">Pay via Card</button>
+        </div>
+
+        <div id="upi-form" class="payment-form hidden">
+            <h3>UPI Payment</h3>
+            <input type="text" id="upi-id" placeholder="Enter UPI ID" required>
+            <button onclick="processPayment('upi')">Proceed</button>
+        </div>
+
+        <div id="card-form" class="payment-form hidden">
+            <h3>Card Payment</h3>
+            <input type="text" id="card-number" placeholder="Card Number" required>
+            <input type="text" id="card-name" placeholder="Cardholder Name" required>
+            <input type="month" id="expiry-date" required>
+            <input type="password" id="cvv" placeholder="CVV" required>
+            <button onclick="processPayment('card')">Proceed</button>
+        </div>
+
+        <p id="payment-status"></p>
+    </div>
+</body>
+</html>

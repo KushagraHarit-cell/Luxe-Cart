@@ -13,7 +13,7 @@
 
         body {
             overflow: hidden;
-            background: linear-gradient(135deg, #000000, #0f0f0f, #1a1a1a);
+            background: linear-gradient(135deg, #000000, #000000, #000000);
             font-family: 'Poppins', sans-serif;
         }
 
@@ -23,7 +23,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: linear-gradient(135deg, #000000, #141414, #222222);
+            background: linear-gradient(135deg, #000000, #000000, #222222);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,28 +32,29 @@
         }
 
         .fullscreen-text {
-            font-size: 2.5rem;
-            color: #fff;
+            font-size: 200px;
+            color: #ff0000bc;
             text-align: center;
+            box-shadow: #ffffff;
             font-weight: bold;
             text-transform: uppercase;
             opacity: 0;
             transition: opacity 1.5s ease-in-out;
-            animation: glow 2s infinite alternate;
+            animation: glow 1.8s infinite alternate;
         }
-
         /* Glowing text animation */
         @keyframes glow {
-            0% { text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 30px #d03800; }
-            100% { text-shadow: 0 0 15px #ff6347, 0 0 25px #ff4500, 0 0 35px #d03800; }
+            0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #000000, 0 0 30px #000000; }
+            100% { text-shadow: 0 0 15px #ff0000, 0 0 25px #000000, 0 0 35px #000000; }
         }
+        
 
         .fade-in {
-            opacity: 1;
+            opacity: 33;
         }
 
         .fade-out {
-            opacity: 0;
+            opacity: 43;
         }
 
         /* Main content (hidden initially) */
@@ -75,7 +76,9 @@
             font-weight: bold;
             transition: all 0.3s ease-in-out;
             box-shadow: 0 0 15px #ff4500;
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 44%;
         }
 
         .enter-btn:hover {
@@ -83,22 +86,31 @@
             box-shadow: 0 0 20px #ff6347;
             transform: scale(1.1);
         }
+        #Welcome{
+            color: white;
+            position: absolute;
+            left: 30%;
+            top: 25%;
+            font-size: 78px;
+            font-family: 'Poppins', sans-serif;
+        }
 
     </style>
 </head>
 <body>
     <!-- Fullscreen Text Effect (Highest Priority) -->
     <div class="fullscreen-container" id="fullscreen">
-        <div class="fullscreen-text" id="text">Where Quality Meets Convenience</div>
+        <div class="fullscreen-text" id="text">Luxe Cart</div>
     </div>
 
     <!-- Main Content (Enter Button) -->
     <div class="content" id="mainContent">
-        <a href="home.html">
-            <button type="submit" class="enter-btn">LuxeCart</button>
+        <a href="landing.html">
+            <button type="submit" class="enter-btn">Go to website</button>
         </a>
+        <h1 id="Welcome">Welcome To LuxeCart</h1>
     </div>
-
+    
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const textElement = document.getElementById('text');
