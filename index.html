@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Awakens</title>
+    <title>Luxe Cart</title>
     <style>
         * {
             margin: 0;
@@ -32,8 +32,8 @@
         }
 
         .fullscreen-text {
-            font-size: 200px;
-            color: #ff0000bc;
+            font-size: 180px;
+            color: #ffffffea;
             text-align: center;
             box-shadow: #ffffff;
             font-weight: bold;
@@ -44,8 +44,8 @@
         }
         /* Glowing text animation */
         @keyframes glow {
-            0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #000000, 0 0 30px #000000; }
-            100% { text-shadow: 0 0 15px #ff0000, 0 0 25px #000000, 0 0 35px #000000; }
+            0% { text-shadow: 0 0 10px #8d3f00, 0 0 20px #000000, 0 0 30px #000000; }
+            100% { text-shadow: 0 0 15px #a54a00, 0 0 25px #000000, 0 0 35px #000000; }
         }
         
 
@@ -66,7 +66,7 @@
 
         .enter-btn {
             padding: 15px 30px;
-            background: linear-gradient(45deg, #ff4500, #d03800);
+            background: linear-gradient(45deg, #b34700, #632c00);
             color: white;
             border: none;
             cursor: pointer;
@@ -75,15 +75,15 @@
             text-transform: uppercase;
             font-weight: bold;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 15px #ff4500;
+            box-shadow: 0 0 15px #ffffff;
             position: absolute;
             top: 50%;
             left: 44%;
         }
 
         .enter-btn:hover {
-            background: linear-gradient(45deg, #ff6347, #d03800);
-            box-shadow: 0 0 20px #ff6347;
+            background: linear-gradient(45deg, #974400, #000000);
+            box-shadow: 0 0 20px #522100;
             transform: scale(1.1);
         }
         #Welcome{
@@ -102,13 +102,12 @@
     <div class="fullscreen-container" id="fullscreen">
         <div class="fullscreen-text" id="text">Luxe Cart</div>
     </div>
+    <video src="welcome to luxe cart.mp4 " autoplay loop muted></video>
 
     <!-- Main Content (Enter Button) -->
     <div class="content" id="mainContent">
         <a href="landing.html">
             <button type="submit" class="enter-btn">Go to website</button>
-        </a>
-        <h1 id="Welcome">Welcome To LuxeCart</h1>
     </div>
     
     <script>
