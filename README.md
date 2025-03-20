@@ -38,7 +38,7 @@ git  https://github.com/KushagraHarit-cell/LuxeCart.git
 
 
 🔗 Live Preview  
-https://luxe-cart-tau.vercel.app/# *(Replace with actual URL when hosted)*  
+https://luxe-cart-tau.vercel.app/#  
 
 
 🔗Contact
