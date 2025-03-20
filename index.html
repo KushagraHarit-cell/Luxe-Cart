@@ -3,138 +3,546 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxe Cart</title>
+    <title>Luxe Cart | Aesthetic Finds Premium Vibes</title>
     <style>
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        body {
-            overflow: hidden;
-            background: linear-gradient(135deg, #000000, #000000, #000000);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .fullscreen-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: linear-gradient(135deg, #000000, #000000, #222222);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000; /* Highest priority */
-            transition: opacity 1s ease-in-out;
-        }
-
-        .fullscreen-text {
-            font-size: 180px;
-            color: #ffffffea;
-            text-align: center;
-            box-shadow: #ffffff;
-            font-weight: bold;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-            animation: glow 1.8s infinite alternate;
-        }
-        /* Glowing text animation */
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px #8d3f00, 0 0 20px #000000, 0 0 30px #000000; }
-            100% { text-shadow: 0 0 15px #a54a00, 0 0 25px #000000, 0 0 35px #000000; }
+            font-family: 'Montserrat', sans-serif;
         }
         
-
-        .fade-in {
-            opacity: 33;
+        body {
+            background-color: #0a0a0a;
+            color: #f8f8f8;
+            overflow-x: hidden;
         }
-
-        .fade-out {
-            opacity: 43;
+        
+        /* Header Styles */
+        header {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            background-color: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Main content (hidden initially) */
-        .content {
-            display: none;
-            text-align: center;
-            padding-top: 20%;
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d4af37;
+            letter-spacing: 2px;
         }
-
-        .enter-btn {
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #b34700, #632c00);
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1.4rem;
-            border-radius: 50px;
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: #f8f8f8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            font-weight: bold;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 15px #ffffff;
-            position: absolute;
-            top: 50%;
-            left: 44%;
+            transition: color 0.3s ease;
         }
-
-        .enter-btn:hover {
-            background: linear-gradient(45deg, #974400, #000000);
-            box-shadow: 0 0 20px #522100;
+        
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+        
+        .nav-icons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-icons a {
+            margin-left: 1.5rem;
+            color: #f8f8f8;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-icons a:hover {
+            color: #d4af37;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            padding-left: 5%;
+            width: 50%;
+            z-index: 2;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #bbb;
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #d4af37;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 2px solid #d4af37;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: #d4af37;
+        }
+        
+        .secondary-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: transparent;
+            color: #f8f8f8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-left: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .secondary-cta:hover {
+            border-color: #f8f8f8;
+        }
+        
+        .watch-display {
+            position: absolute;
+            right: -100px;
+            width: 60%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: watchEntrance 1.5s ease forwards 0.5s;
+        }
+        
+        @keyframes watchEntrance {
+            0% {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .watch-circle {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(10, 10, 10, 0) 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .watch-image {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            animation: watchFloat 6s ease-in-out infinite;
+        }
+        
+        @keyframes watchFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+        
+        .watch-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 100px 50px rgba(212, 175, 55, 0.15);
+            z-index: -1;
+        }
+        
+        /* Featured Section */
+        .featured {
+            padding: 5rem 5%;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: #d4af37;
+        }
+        
+        .watches-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .watch-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .watch-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .watch-card-image {
+            height: 300px;
+            background-color: #0f0f0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .watch-card-image img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .watch-card:hover .watch-card-image img {
             transform: scale(1.1);
         }
-        #Welcome{
-            color: white;
-            position: absolute;
-            left: 30%;
-            top: 25%;
-            font-size: 78px;
-            font-family: 'Poppins', sans-serif;
+        
+        .watch-info {
+            padding: 1.5rem;
         }
-
+        
+        .watch-brand {
+            font-size: 0.8rem;
+            color: #d4af37;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .watch-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .watch-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f8f8f8;
+        }
+        
+        .watch-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .add-to-cart {
+            background-color: transparent;
+            border: none;
+            color: #f8f8f8;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            color: #d4af37;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0f0f0f;
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .footer-logo span {
+            color: #d4af37;
+        }
+        
+        .footer-tagline {
+            color: #bbb;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-desc {
+            color: #999;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        .footer-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #d4af37;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links li a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links li a:hover {
+            color: #d4af37;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.8rem;
+        }
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Fullscreen Text Effect (Highest Priority) -->
-    <div class="fullscreen-container" id="fullscreen">
-        <div class="fullscreen-text" id="text">Luxe Cart</div>
-    </div>
-    <video src="welcome to luxe cart.mp4 " autoplay loop muted></video>
+    <!-- Header -->
+    <header>
+        <div class="logo">LUXE<span>CART</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="home.html">Collections</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="login.html"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
 
-    <!-- Main Content (Enter Button) -->
-    <div class="content" id="mainContent">
-        <a href="landing.html">
-            <button type="submit" class="enter-btn">Go to website</button>
-    </div>
-    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="tagline">Aesthetic Finds Premium Vibes</p>
+            <h1 class="hero-title">Elevate Your Time With Luxury Timepieces</h1>
+            <p class="hero-desc">Experience the perfect blend of craftsmanship, heritage, and innovation with our curated collection of premium watches that define elegance.</p>
+            <a href="home.html" class="cta-button">Shop Collection</a>
+            <a href="about.html" class="secondary-cta">Learn More</a>
+        </div>
+        <div class="watch-display">
+            <div class="watch-circle">
+                <div class="glow"></div>
+                <div class="watch-image">
+                    <img src="https://cdn.thewatchpages.com/app/uploads/2020/07/13212512/jacob-Co-300-800x1000.jpg" alt="Luxury Watch">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Watches -->
+    <section class="featured">
+        <h2 class="section-title">Featured Timepieces</h2>
+        <div class="watches-grid">
+            <div class="watch-card">
+                <div class="watch-card-image">
+                    <img src="https://www.jamesedition.com/stories/wp-content/uploads/2021/06/main_fin_auto_x2-1-1-942x628.jpeg" alt="Premium Watch">
+                </div>
+                <div class="watch-info">
+                    <p class="watch-brand">Audemars Piguet</p>
+                    <h3 class="watch-name">Royal Oak Chronograph</h3>
+                    <div class="watch-meta">
+                        <p class="watch-price">$32,500</p>
+                        <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="watch-card">
+                <div class="watch-card-image">
+                    <img src="https://cdn.thewatchpages.com/app/uploads/2020/07/13212456/RM11-03_McL_front_strap-800x810.jpg" alt="Premium Watch">
+                </div>
+                <div class="watch-info">
+                    <p class="watch-brand">Patek Philippe</p>
+                    <h3 class="watch-name">Nautilus Automatic</h3>
+                    <div class="watch-meta">
+                        <p class="watch-price">$48,970</p>
+                        <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="watch-card">
+                <div class="watch-card-image">
+                    <img src="https://images.squarespace-cdn.com/content/v1/56a9e12ac647ad08eb4453c7/1462870784603-0MCD0U2MCE3KWHAF6IP6/Aeternitas.jpg" alt="Premium Watch">
+                </div>
+                <div class="watch-info">
+                    <p class="watch-brand">Rolex</p>
+                    <h3 class="watch-name">Daytona Platinum</h3>
+                    <div class="watch-meta">
+                        <p class="watch-price">$75,000</p>
+                        <button class="add-to-cart"><i class="fas fa-shopping-bag"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">LUXE<span>CART</span></div>
+                <p class="footer-tagline">Aesthetic Finds Premium Vibes</p>
+                <p class="footer-desc">Luxe Cart is dedicated to bringing you the finest luxury timepieces from renowned watchmakers around the world. Each piece is carefully curated to ensure authenticity and exceptional quality.</p>
+            </div>
+            <div>
+                <h3 class="footer-title">Shop</h3>
+                <ul class="footer-links">
+                    <li><a href="home.html">Men's Watches</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">About</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Craftsmanship</a></li>
+                    <li><a href="#">Authentication</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Luxe Cart. All Rights Reserved.
+        </div>
+    </footer>
+
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const textElement = document.getElementById('text');
-            const fullscreen = document.getElementById('fullscreen');
-            const mainContent = document.getElementById('mainContent');
-
-            // Step 1: Show text after 0.5 seconds
-            setTimeout(() => {
-                textElement.classList.add('fade-in');
-            }, 500);
-
-            // Step 2: Fade out text after 3 seconds
-            setTimeout(() => {
-                textElement.classList.remove('fade-in');
-                textElement.classList.add('fade-out');
-            }, 3000);
-
-            // Step 3: Remove fullscreen effect and show main content after 4 seconds
-            setTimeout(() => {
-                fullscreen.style.opacity = "0";
-                setTimeout(() => {
-                    fullscreen.style.display = "none";
-                    mainContent.style.display = "block";
-                }, 1000); // Wait for fade-out effect
-            }, 4000);
+        // Animation for subtle parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const watchImage = document.querySelector('.watch-image');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            watchImage.style.transform = `translateY(${y * -20}px) translateX(${x * -20}px) rotate(${x * 5}deg)`;
+        });
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>

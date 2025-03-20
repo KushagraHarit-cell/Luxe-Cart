@@ -3,34 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About LuxeCart</title>
-    <link rel="stylesheet" href="style.css">
+    <title>About Us - LUXECART</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #090808;
+            box-shadow: 0 2px 10px rgba(102, 102, 102, 0.39);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            background-color: #222222;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #d4af37;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* About Content Styles */
+        .about-section {
+            padding: 80px 0;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-image: url(https://files.oaiusercontent.com/file-NtnzRTTC4ZwdiMAKXz9aMM?se=2025-03-19T21%3A32%3A46Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D4fba6a5f-3932-468b-be8a-93b9909b1aa5.webp&sig=T7EVGk7N2VQty2dwOvSgdnGAYTnyOV%2BNLH1zKqglWTg%3D);
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #d4af37;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #ffffff;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 80px 0;
+            background-color: #080606;
+        }
+
+        .values-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background-color: #151413;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .value-card p {
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background-color: #151413;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            min-width: 250px;
+            max-width: 280px;
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 12px 15px white;
+        }
+
+        .member-image {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .member-info h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .member-info p {
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 96px;
+            height: 36px;
+            background-color: #f1f1f1;
+            border-radius: 50px;
+            color: #000000;
+            text-align: center;
+            line-height: 36px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color:  #696766;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #d4af37;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #d4af37;
+        }
+
+        .footer-column p {
+            margin-bottom: 15px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #dddddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d4af37;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .nav-links {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-links li {
+                margin-left: 0;
+            }
+            
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .about-content {
+                flex-direction: column-reverse;
+            }
+            
+            .about-image {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .value-card, .team-member {
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>About LuxeCart</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">LUXECART</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home.html">Collections</a></li>
+                    <li><a href="about.html" style="color: #d4af37;">About</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <section class="about-section">
-        <div class="about-container">
-            <h2>Who We Are <hr>
-            At LuxeCart, we believe that shopping should be more than just a transaction—it should be an experience. <hr>
-            That’s why we’ve built a platform that blends luxury, convenience, and affordability, offering you a curated selection of high-quality products at competitive prices. <hr>
-            LuxeCart is a premium shopping platform, offering handpicked products that blend luxury with affordability.</h2>
-            <h2>Our Mission <br>
-                💎 To bring you premium products that enhance your lifestyle <hr>
-                🚀 To create a seamless shopping experience with cutting-edge design <hr>
-                💖 To prioritize customer satisfaction and deliver beyond expectations</h2>
-            
-            <p>We aim to provide a seamless and aesthetic shopping experience with a modern, sleek interface.</p>
-            <h2>Why Choose Us?</h2>
-            <p>✔ Curated Collections<hr>✔ Fast & Secure Checkout<hr>✔ Customer-Centric Approach</p>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p>Discover the luxury e-commerce experience that redefines online shopping</p>
         </div>
     </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About LUXECART</h2>
+                    <p>Founded in 2018, LUXECART was born from a simple yet powerful vision: to create an online shopping destination where luxury meets convenience. What began as a small curated collection of premium products has evolved into a comprehensive e-commerce platform featuring the world's most coveted brands.</p>
+                    <p>Our mission is to bridge the gap between exclusive luxury retail experiences and the digital world. We carefully select each product in our inventory, ensuring that every item meets our stringent standards for quality, craftsmanship, and design excellence.</p>
+                    <p>At LUXECART, we believe that luxury should be accessible, and the online shopping experience should be as refined as the products we offer. Our team of dedicated professionals works tirelessly to provide personalized service, seamless navigation, and secure transactions.</p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Our Core Values</h2>
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-icon">★</div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in everything we do, from product curation to customer service. Our commitment to quality is unwavering.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✓</div>
+                    <h3>Authenticity</h3>
+                    <p>Every product on our platform is guaranteed authentic. We maintain strict verification processes to ensure the integrity of our inventory.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">♥</div>
+                    <h3>Customer Centricity</h3>
+                    <p>Our customers are at the heart of our business. We continuously evolve based on your feedback to enhance your shopping experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Made By</h2>
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="member-image" style="background-image: url('kushagra\ harit\ 3.jpg')"></div>
+                    <div class="member-info">
+                        <h3>Kushagra Harit</h3>
+                        <p>Founder & CEO</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/onlywith_kushagra/">instagram</a>
+                            <a href="https://www.linkedin.com/in/kushagra-h-011452324/">linkedin</a>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LUXECART</h3>
+                    <p>Redefining luxury e-commerce with curated premium products and exceptional service.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="home.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                </div>
+                
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 LUXECART. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

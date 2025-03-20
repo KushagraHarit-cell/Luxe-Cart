@@ -3,30 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - LuxeCart</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <title>LuxeCart - Premium Watch Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #161616 0%, #161616 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+        
+        .container {
+            display: flex;
+            width: 900px;
+            height: 550px;
+            box-shadow: 0 20px 50px rgba(81, 76, 76, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .image-container {
+            flex: 1;
+            background: url("luxecart.webp") center/cover;
+            position: relative;
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+        }
+        
+        .image-overlay h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .image-overlay p {
+            font-size: 16px;
+            font-weight: 300;
+            max-width: 80%;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .login-container {
+            flex: 1;
+            background-color: #000000;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #d4af37;
+        }
+        
+        .logo {
+            margin-bottom: 40px;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #d4af37;
+            letter-spacing: 2px;
+        }
+        
+        .form-title {
+            margin-bottom: 30px;
+        }
+        
+        .form-title h2 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #ffffff;
+        }
+        
+        .form-title p {
+            font-size: 14px;
+            color: #d4af37;
+            margin-top: 8px;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            color: #dcdcdc;
+            margin-bottom: 8px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #f5f5f5;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .input-group input:focus {
+            border-color: #d4af37;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(196, 164, 124, 0.2);
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 13px;
+        }
+        
+        .remember {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember input {
+            margin-right: 8px;
+        }
+        
+        .forgot-link {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+        
+        .login-button {
+            background: linear-gradient(135deg, #d4af37 0%, #ce8313b1 100%);
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .login-button:hover {
+            background: linear-gradient(135deg, #d4af37 0%, #624719 100%);
+            box-shadow: 0 5px 15px rgba(168, 138, 93, 0.3);
+        }
+        
+        .signup-link {
+            text-align: center;
+            font-size: 14px;
+            color: #d4af37;
+        }
+        
+        .signup-link a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+                width: 90%;
+            }
+            
+            .image-container {
+                display: none;
+            }
+            
+            .login-container {
+                padding: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Login to LuxeCart</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="login-section">
-        <div class="login-container">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <input type="text" id="username" placeholder="Username">
-                <input type="password" id="password" placeholder="Password">
-                <button type="submit" id="login_btn"><h3><a href="home.html">Login</a></h3></button>
-            </form>
-            <p id="error-message"></p>
+    <div class="container">
+        <div class="image-container">
+            <div class="image-overlay">
+            </div>
         </div>
-    </section>
+        <div class="login-container">
+            <div class="logo">
+                <h1>LUXE<span>CART</span></h1>
+            </div>
+            <div class="form-title">
+                <h2>Welcome Back</h2>
+                <p>Sign in to explore our premium watch collection</p>
+            </div>
+            <form action="home.html" method="GET">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="remember-forgot">
+                    <div class="remember">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-button">Sign In</button>
+                <div class="signup-link">
+                    Don't have an account? <a href="#">Create Account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            // For demonstration purposes, prevent default and redirect
+            // In a real application, you would validate credentials server-side
+            e.preventDefault();
+            window.location.href = 'home.html';
+        });
+    </script>
 </body>
 </html>
