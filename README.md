@@ -44,5 +44,5 @@ https://luxe-cart-tau.vercel.app/# *(Replace with actual URL when hosted)*
 🔗Contact
 For any inquiries or feedback, feel free to reach out:
 
-Email: kushagraharit123@gmail.com
-GitHub: KushagraHarit-cell
+🔗Email: kushagraharit123@gmail.com
+🔗GitHub: KushagraHarit-cell
